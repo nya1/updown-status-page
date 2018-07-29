@@ -16,7 +16,7 @@ Page is written with Vue.js.
 
  * Edit `page_config.json` and enter your details (read only key, website url, logo url etc.)
 
- * Link the repositroy to Netlify
+ * Deploy to Netlify
  
    * Build command: `npm run build`
    
