@@ -41,14 +41,10 @@ npm run build --report
 
 ## TODO
 
- * Add loading icon
-
  * Automatically update checks every x minutes (based on the lowest checks.period)
-
- * Handle http error
 
  * Add footer (twitter, email and homepage link)
 
  * Improve layout for mobile
  
- * Fix spacing between checks
+ * Better spacing between checks
