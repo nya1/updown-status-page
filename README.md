@@ -2,10 +2,13 @@
 
 > General updown.io status page for all your public checks
 
+![example](https://i.imgur.com/aWa0qxJ.png)
+
 
 ## How it works
 
 Fetches updown.io's API via the read only key and populates the page.
+Page is written with Vue.js.
 
 ## Config
 
@@ -14,6 +17,10 @@ Fetches updown.io's API via the read only key and populates the page.
  * Edit `page_config.json` and enter your details (read only key, website url, logo url etc.)
 
  * Link the repositroy to Netlify
+ 
+   * Build command: `npm run build`
+   
+   * Public directory: `dist`
 
 
 ## Build Setup
@@ -43,3 +50,5 @@ npm run build --report
  * Add footer (twitter, email and homepage link)
 
  * Improve layout for mobile
+ 
+ * Fix spacing between checks
