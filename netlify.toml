@@ -1,9 +1,3 @@
-[Settings]
-  UPDOWN_READ_KEY = "updown.io read access key"
-  WEBSITE_NAME = "GitHub"
-  WEBSITE_URL = "https://github.com/"
-  LOGO_URL = "https://clipart.info/images/ccovers/1499794873github-logo-png.png"
-
 [build]
   publish = "dist"
   command = "npm run build"

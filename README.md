@@ -10,20 +10,16 @@
 Fetches updown.io's API via the read only key and populates the page.
 Page is written with Vue.js.
 
-## Config
+## Deploy your own public page
 
- * Fork
+ * Fork this repository
 
  * Edit `page_config.json` and enter your details (read only key, website url, logo url etc.)
 
  * Deploy to Netlify
- 
-   * Build command: `npm run build`
-   
-   * Public directory: `dist`
 
 
-## Build Setup
+## Build Setup (only for development)
 
 ``` bash
 # install dependencies
