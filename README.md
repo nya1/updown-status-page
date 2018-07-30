@@ -1,13 +1,13 @@
 # updown-status-page
 
-> General updown.io status page for all your public checks
+> Free general updown.io status page for all your public checks
 
-![example](https://i.imgur.com/aWa0qxJ.png)
+![example](https://i.imgur.com/ONrj9QP.png)
 
 
 ## How it works
 
-Fetches updown.io's API via the read only key and populates the page.
+Fetches updown.io's API via the read only key and populates the page, hosting is provided by Netlify (free).
 Page is written with Vue.js.
 
 ## Deploy your own public page
