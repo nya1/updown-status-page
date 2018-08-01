@@ -2,7 +2,7 @@
 
 > Free general updown.io status page for all your public checks
 
-![example](https://i.imgur.com/ONrj9QP.png)
+Demo: [example](https://status.1link.io/)
 
 
 ## How it works
@@ -23,14 +23,9 @@ Every Github commit will trigger a new deploy of your status page
 
 ## TODO
 
- * Automatically update checks every x minutes (based on the lowest checks.period)
-
- * Add footer (twitter, email and homepage link)
+ * Automatically update checks every x minutes ? (based on the lowest checks.period)
 
  * Improve layout for mobile
- 
- * Better spacing between checks
-
 
 ## Build Setup (only for development)
 

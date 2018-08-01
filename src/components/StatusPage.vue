@@ -1,17 +1,15 @@
 <template>
-  <div class="container">
+  <div >
     <div class="row align-items-center">
       <div class="col-md-12 text-center">
-        <div class="top">
-          <a :href="config.website_url"><img v-if="typeof config.logo_url !== 'undefined'" :src="config.logo_url" :alt="config.website_name" class="logotop" /></a>
-          <h3>{{config.website_name}} Status page</h3>
-        </div>
-
         <div v-if="loading === true">
             <p class="text-muted center-text">Loading, please wait...</p>
         </div>
         <div v-else-if="error !== false">
-            <p class="center-text">An error occured {{error}}</p>
+            <p class="center-text">An error occured {{error.message || error}}</p>
+        </div>
+        <div v-else-if="checks === null || checks.length === 0">
+            <p class="center-text">No checks found</p>
         </div>
         <div v-else>
           <hr/>
@@ -51,42 +49,50 @@
 </template>
 
 <script>
-const config = require('../../page_config.json')
 const Updown = require('node-updown');
-const ud = new Updown(config.updown_read_key);
 export default {
   data () {
     return {
-      config,
       checks: [],
       loading: true,
-      error: false
+      error: false,
+      lastPageUpdate: null,
+      ud: null
     }
   },
   mounted () {
+    // init updown api object
+    this.ud = new Updown(this.$config.updown_read_key);
     // fetch all checks
     this.fetchChecks()
   },
   methods: {
     fetchChecks: async function () {
       try {
-        let checks = await ud.getChecks()
+        let pageRateUpdate = 300
+        let checks = await this.ud.getChecks()
         if (checks.length > 0) {
-          this.checks = checks
+          // skip checks that are not published or enabled
+          this.checks = checks.filter(c => {
+            let isValid = c.enabled === true && c.published === true
+            // use this filter to set the lowest update rate
+            if (isValid && c.period < pageRateUpdate) pageRateUpdate = c.period
+            return isValid
+          })
         }
-        this.loading = false
+        this.lastPageUpdate = new Date()
       } catch (e) {
         console.error(e)
-        this.loading = false
         this.error = e
       }
+      this.loading = false
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .center-text {
   padding: 10% 2%;
 }
@@ -128,12 +134,5 @@ h6 {
 .desc {
   font-size: 0.75em;
   margin-bottom: -5px;
-}
-.logotop {
-  max-height: 80px;
-  margin-bottom: 20px;
-}
-.top {
-  padding: 20px 0;
 }
 </style>
