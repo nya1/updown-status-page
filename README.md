@@ -1,6 +1,6 @@
-# updown-status-page
+# Updown Status Page
 
-Free updown.io status page to list all your public checks
+Free status page to list all your updown.io checks
 
 Demo: [example](https://status.1link.io/)
 
@@ -8,7 +8,7 @@ Demo: [example](https://status.1link.io/)
 ## How it works
 
 Fetches updown.io's API via the read only key and populates the page, hosting is provided by Netlify (free).
-Page is written with Vue.js.
+Page is written in Vue.js.
 
 ## Deploy your own public page
 
@@ -21,24 +21,21 @@ Page is written with Vue.js.
 Every Github commit will trigger a new deploy of your status page
 
 
-## TODO
-
- * Automatically update checks every x minutes ? (based on the lowest checks.period)
-
- * Improve layout for mobile
-
 ## Build Setup (only for development)
 
 ``` bash
 # install dependencies
-npm install
+yarn install
 
 # serve with hot reload at localhost:8080
-npm run dev
+yarn dev
+
+# check vue and js syntax
+yarn lint
 
 # build for production with minification
-npm run build
+yarn build
 
 # build for production and view the bundle analyzer report
-npm run build --report
+yarn build --report
 ```
