@@ -1,6 +1,6 @@
 # updown-status-page
 
-> Free general updown.io status page for all your public checks
+Free updown.io status page to list all your public checks
 
 Demo: [example](https://status.1link.io/)
 
