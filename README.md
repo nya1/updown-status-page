@@ -1,12 +1,9 @@
 # Updown Status Page
 
-[ci status]: https://github.com/nya1/updown-status-page/workflows/Syntax%20checker%20and%20build/badge.svg "ci status"
-
 Free status page to list all your updown.io checks
 
-[demo]: screenshot_demo.png "Demo status page"
-
-[Live demo](https://status.1link.io/)
+Example:
+[![demo](screenshot_demo.png)](https://status.1link.io/)
 
 
 ## How it works
@@ -26,6 +23,10 @@ Every Github commit will trigger a new deploy of your status page
 
 
 ## Build Setup (only for development)
+
+<p align="center">
+  <img src="https://github.com/nya1/updown-status-page/workflows/Syntax%20checker%20and%20build/badge.svg">
+</p>
 
 ``` bash
 # install dependencies
