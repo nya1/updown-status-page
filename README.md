@@ -2,7 +2,9 @@
 
 Free status page to list all your updown.io checks
 
-Demo: [example](https://status.1link.io/)
+[demo]: screenshot_demo.png "Demo status page"
+
+[Live demo](https://status.1link.io/)
 
 
 ## How it works
