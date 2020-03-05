@@ -1,5 +1,7 @@
 # Updown Status Page
 
+[ci status]: https://github.com/nya1/updown-status-page/workflows/Syntax%20checker%20and%20build/badge.svg "ci status"
+
 Free status page to list all your updown.io checks
 
 [demo]: screenshot_demo.png "Demo status page"
