@@ -76,9 +76,8 @@
 </template>
 
 <script>
-import { getChecks } from 'node-updown';
 import ago from 's-ago';
- 
+
 export default {
   data () {
     return {
@@ -93,10 +92,14 @@ export default {
     this.fetchChecks();
   },
   methods: {
-    fetchChecks: async function () {
+    async getChecks() {
+      const data = await window.fetch('https://updown.io/api/checks?api-key=' + this.$config.updown_read_key);
+      return data.json();
+    },
+    async fetchChecks () {
       try {
         // call updown api to get all checks
-        const checks = await getChecks(this.$config.updown_read_key);
+        const checks = await this.getChecks();
         if (checks.length > 0) {
           // filter checks that are not published or enabled
           this.checks = checks.filter(c => {
